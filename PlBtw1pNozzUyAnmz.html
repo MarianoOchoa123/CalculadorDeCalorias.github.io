@@ -1,0 +1,312 @@
+<html><head><base href="https://marianoochoa.com/quiero%20que%20a%20la%20hora%20de%20calcular%20te%20pueda%20decir%20esto%20que%20ves%20en%20la%20siguiente%20imagen%20lo%20dem%C3%A1s%20d%C3%A9jalo%20como%20est%C3%A1,%20si%20puedes%20tambien%20haz%20la%20pagina%20un%20poco%20mas%20viva%20es%20decir%20con%20alguna%20cosa%20relacionada%20con%20el%20gym%20y%20la%20alimentacion%20o%20o%20algun%20detalle%20pero%20con%20el%20nombre%20de%20MARIANO%20OCHOA%20y%20tambien%20colores%20rojos.%20rojos%20claros.%20oscuros,%20negros,%20blancos%20y%20quita%20el%20nombre%20de%20fit%20generation,%20si%20puedes%20a%C3%B1ade%20aun%20mas%20detalles">
+<title>MARIANO OCHOA - Calculadora de Calorías y Nutrición</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #1a1a1a;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    header {
+        background: linear-gradient(45deg, #8B0000, #FF4500);
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        margin: 0;
+    }
+    .calculator {
+        background-color: #2c2c2c;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #FF6347;
+        font-weight: bold;
+    }
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #3a3a3a;
+        color: #ffffff;
+        font-size: 16px;
+    }
+    button {
+        background: linear-gradient(45deg, #FF4500, #FF6347);
+        color: #ffffff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        font-size: 16px;
+    }
+    button:hover {
+        background: linear-gradient(45deg, #FF6347, #FF4500);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(255, 99, 71, 0.3);
+    }
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-align: center;
+        color: #FF4500;
+        padding: 10px;
+        background-color: rgba(255, 69, 0, 0.1);
+        border-radius: 5px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #3a3a3a;
+    }
+    th, td {
+        border: 1px solid #FF4500;
+        padding: 12px;
+        text-align: left;
+    }
+    th {
+        background-color: #8B0000;
+        color: #ffffff;
+    }
+    .gym-icon {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+    .animated-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.1;
+        background: linear-gradient(45deg, #8B0000, #FF4500, #FF6347);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    .logo {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .subtitle {
+        font-size: 1.2em;
+        color: #FFD700;
+        margin-top: 10px;
+    }
+    .nutrition-icons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    .nutrition-icon {
+        font-size: 40px;
+        color: #FF6347;
+        transition: transform 0.3s ease;
+    }
+    .nutrition-icon:hover {
+        transform: scale(1.2);
+    }
+    .progress-bar {
+        width: 100%;
+        height: 20px;
+        background-color: #3a3a3a;
+        border-radius: 10px;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+    .progress {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(45deg, #FF4500, #FF6347);
+        transition: width 0.5s ease;
+    }
+    .tip-box {
+        background-color: rgba(255, 69, 0, 0.1);
+        border-left: 4px solid #FF4500;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 0 5px 5px 0;
+    }
+    .tip-title {
+        font-weight: bold;
+        color: #FF6347;
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+<div class="animated-background"></div>
+<header>
+    <div class="logo">MARIANO OCHOA</div>
+    <div class="subtitle">Tu camino hacia una vida más saludable</div>
+</header>
+<div class="container">
+    <div class="calculator">
+        <h2><span class="gym-icon">💪</span>Calculadora de Calorías<span class="gym-icon">🏋️‍♂️</span></h2>
+        <form id="calorieForm">
+            <label for="gender">Tu sexo:</label>
+            <select id="gender" required>
+                <option value="">Selecciona tu sexo</option>
+                <option value="male">Hombre</option>
+                <option value="female">Mujer</option>
+            </select>
+            
+            <label for="age">Tu edad:</label>
+            <input type="number" id="age" placeholder="Introduce tu edad" required>
+            
+            <label for="weight">Tu peso (kg):</label>
+            <input type="number" id="weight" placeholder="Introduce el peso en kg." required>
+            
+            <label for="height">Tu altura (cm):</label>
+            <input type="number" id="height" placeholder="Introduce la altura en cm." required>
+            
+            <label for="activity">¿Cuál es tu nivel de actividad física diaria?</label>
+            <select id="activity" required>
+                <option value="">Selecciona una opción</option>
+                <option value="1.2">Sedentario: poco o nada de ejercicio al día</option>
+                <option value="1.375">Actividad ligera: ejercicio ligero o deporte 1-3 días a la semana</option>
+                <option value="1.55">Actividad moderada: ejercicio moderado o deporte 3-5 días a la semana</option>
+                <option value="1.725">Actividad intensa: ejercicio intenso o deporte 6-7 días a la semana</option>
+                <option value="1.9">Actividad muy intensa: ejercicio intenso o trabajo físico y ejercicio diario</option>
+            </select>
+            
+            <label for="goal">¿Cuál es tu objetivo?</label>
+            <select id="goal" required>
+                <option value="">Selecciona una opción</option>
+                <option value="increase">Aumentar masa muscular</option>
+                <option value="decrease">Bajar grasa corporal</option>
+                <option value="maintain">Mantener el peso actual</option>
+            </select>
+            
+            <button type="submit">Calcular mis calorías</button>
+        </form>
+        <div id="result"></div>
+        <div class="progress-bar">
+            <div class="progress" id="progressBar"></div>
+        </div>
+        <table id="calorieTable" style="display:none;">
+            <tr>
+                <th>Nivel</th>
+                <th>kcal/día</th>
+            </tr>
+            <tr>
+                <td>Superávit ligero</td>
+                <td id="light"></td>
+            </tr>
+            <tr>
+                <td>Superávit moderado</td>
+                <td id="moderate"></td>
+            </tr>
+            <tr>
+                <td>Superávit agresivo</td>
+                <td id="aggressive"></td>
+            </tr>
+            <tr>
+                <td>Superávit muy agresivo</td>
+                <td id="veryAggressive"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="nutrition-icons">
+        <div class="nutrition-icon" title="Grasas saludables">🥑</div>
+        <div class="nutrition-icon" title="Proteínas">🍗</div>
+        <div class="nutrition-icon" title="Verduras">🥦</div>
+        <div class="nutrition-icon" title="Frutas">🍎</div>
+        <div class="nutrition-icon" title="Lácteos">🥛</div>
+    </div>
+    <div class="tip-box">
+        <div class="tip-title">Consejo del día:</div>
+        <p id="dailyTip">Recuerda beber suficiente agua durante el día para mantenerte hidratado y apoyar tu metabolismo.</p>
+    </div>
+</div>
+
+<script>
+document.getElementById('calorieForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const gender = document.getElementById('gender').value;
+    const age = parseFloat(document.getElementById('age').value);
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const activity = parseFloat(document.getElementById('activity').value);
+    const goal = document.getElementById('goal').value;
+    
+    let bmr;
+    if (gender === 'male') {
+        bmr = 66 + (13.75 * weight) + (5 * height) - (6.75 * age);
+    } else {
+        bmr = 655 + (9.56 * weight) + (1.85 * height) - (4.68 * age);
+    }
+    
+    let tdee = bmr * activity;
+    
+    document.getElementById('light').textContent = Math.round(tdee * 1.1);
+    document.getElementById('moderate').textContent = Math.round(tdee * 1.15);
+    document.getElementById('aggressive').textContent = Math.round(tdee * 1.2);
+    document.getElementById('veryAggressive').textContent = Math.round(tdee * 1.25);
+    
+    document.getElementById('result').innerHTML = `<span class="gym-icon">🔥</span> Tu gasto calórico diario total (TDEE) es: ${Math.round(tdee)} kcal <span class="gym-icon">🔥</span>`;
+    document.getElementById('calorieTable').style.display = 'table';
+    
+    // Animate progress bar
+    const progressBar = document.getElementById('progressBar');
+    progressBar.style.width = '0%';
+    setTimeout(() => {
+        progressBar.style.width = '100%';
+    }, 100);
+});
+
+// Array of daily tips
+const tips = [
+    "Incluye proteínas en cada comida para mantener la saciedad y apoyar la recuperación muscular.",
+    "Las grasas saludables son esenciales para la absorción de vitaminas y la producción hormonal.",
+    "Los carbohidratos complejos proporcionan energía sostenida para tus entrenamientos.",
+    "Dormir lo suficiente es crucial para la recuperación y el control del apetito.",
+    "La consistencia es clave: mantén tus hábitos saludables incluso en los días de descanso."
+];
+
+// Function to set a random daily tip
+function setRandomTip() {
+    const tipElement = document.getElementById('dailyTip');
+    const randomTip = tips[Math.floor(Math.random() * tips.length)];
+    tipElement.textContent = randomTip;
+}
+
+// Set a random tip when the page loads
+setRandomTip();
+</script>
+</body>
+</html>
